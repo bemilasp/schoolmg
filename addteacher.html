@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="./js/simple-datatables@latest.js" crossorigin="anonymous"></script>
+    <script src="./js/datatables-simple-demo.js"></script>
+
+
+
+    <link href="./css/styles.css" rel="stylesheet" />
+    
+
+
+
+
+
+
+</head>
+
+<body id="page-top" class="bg-secondary">
+
+    <!-- Page Wrapper -->
+    <div class="row">
+        <div id="wrapper" class="col">
+
+
+            <!-- Sidebar -->
+            <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Royal School</div>
+                </a>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
+
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        <i class="fas fa-home"></i>
+                        <span>HOME</span></a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed active" href="student.html">
+                        <i class="fas fa-user-friends"></i>
+                        <span>Student Details</span>
+                    </a>
+                </li>
+                <hr class="sidebar-divider">
+
+
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link" href="teacher.html" data-target="#collapseUtilities" aria-expanded="true"
+                        aria-controls="collapseUtilities">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Teacher Details</span>
+                    </a>
+                </li>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link" href="fees.html" data-target="#collapsePages" aria-expanded="true"
+                        aria-controls="collapsePages">
+                        <i class="fas fa-money-bill-alt"></i>
+                        <span>Fees Details</span>
+                    </a>
+                </li>
+                <hr class="sidebar-divider">
+                <!-- Nav Item - Charts -->
+                <li class="nav-item">
+                    <a class="nav-link" href="reports.html">
+                        <i class="fas fa-book-open"></i>
+                        <span>Reports</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <!-- Nav Item - Tables -->
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">
+                        <i class="fas fa-images"></i>
+                        <span>Gallery</span></a>
+                </li>
+                <hr class="sidebar-divider d-none d-md-block">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="facility.html">
+                        <i class="fas fa-building"></i>
+                        <span>Facilities</span></a>
+                </li>
+                <hr class="sidebar-divider">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="topper.html">
+                        <i class="fas fa-user-graduate"></i>
+                        <span>Topper Students</span></a>
+                </li>
+                <hr class="sidebar-divider">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        <i class="fas fa-phone-square-alt"></i>
+                        <span>Contact Us</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4" style="position: absolute; top: 30px; left: 210px; ">
+
+                <ol class="breadcrumb mb-4 bg-white" style="height: 30px;width: 1080px;">
+                    <li class="breadcrumb-item">
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li class="breadcrumb-item"><a href="teacher.html">Teacher Details</a></li>
+                    <li class="breadcrumb-item">Add Teacher</li>
+                </ol>
+              
+                <form style="position:absolute;left: 20px;">
+                    <div class="card mx-auto" id="card" style="width: 68rem;">
+                        <div class="card-body">
+                            <div class="row mt-4">
+                                <div class="col md-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Name</label>
+                                    <input type="text" class="form-control" onkeyup="showErr(this)" data-attr="nameErr" id="name" onkeyup="hideError(this)"
+                                        data-attr="nameErr" required>
+                                    <div class="invalid-feedback" id="nameErr">
+                                        This field is mandatory
+                                    </div>
+                                </div>
+                                <div class="col md-3 ">
+                                    <label for="exampleFormControlInput1" class="form-label">Qualification</label>
+                                    <input type="text" class="form-control" onkeyup="showErr(this)" data-attr="specialistErr"     id="class" onkeyup="hideError(this)"
+                                        data-attr="specialistErr" required>
+                                    <div class="invalid-feedback" id="specialistErr">
+                                        This field is mandatory
+                                    </div>
+                                </div>
+                                <div class="col md-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Handling Subject</label>
+                                    <input type="text" class="form-control" onkeyup="showErr(this)" data-attr="qualificationErr"   id="section" onkeyup="hideError(this)"
+                                        data-attr="qualificationErr" required>
+                                    <div class="invalid-feedback" id="qualificationErr">
+                                        This field is mandatory
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col md-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Contact No</label>
+                                    <input type="number" class="form-control" onkeyup="showErr(this)" data-attr="emailErr" id="number" onkeydown="validEmail()"
+                                        onkeyup="hideError(this)" data-attr="emailErr" required>
+                                    <div class="invalid-feedback" id="emailErr">
+                                        This field is mandatory
+                                    </div>
+                                   
+                                </div>
+                                <div class="col md-3">
+                                    <label for="exampleFormControlInput1" class="form-label">Address</label>
+                                    <input type="text" class="form-control" onkeyup="showErr(this)" data-attr="numberErr" id="address" onkeyup="hideError(this)"
+                                        data-attr="numberErr" required>
+                                    <div class="invalid-feedback" id="numberErr">
+                                        This field is mandatory
+                                    </div>
+                                </div>
+
+                                <div class="col md-3">
+                                    <label for="exampleFormControlInput1" class="form-label">mother name</label>
+                                    <input type="text" class="form-control" onkeyup="showErr(this)" id="mother" onkeyup="hideError(this)"
+                                        data-attr="motherErr" required>
+                                    <div class="invalid-feedback" id="motherErr">
+                                        This field is mandatory
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-4 md-3">
+                                        <label for="exampleFormControlInput1" class="form-label">father name</label>
+                                        <input type="text" class="form-control" onkeyup="showErr(this)" id="father" onkeyup="hideError(this)"
+                                            data-attr="fatherErr" required>
+                                        <div class="invalid-feedback" id="numberErr">
+                                            This field is mandatory
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                                <div class="col  d-md-flex justify-content-md-end">
+                                    <a href="#" class="btn btn-primary" id="add">Add
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="toast" id="toastAlert" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="toast-body">
+                                    Added Successfully
+                                    <div class="mt-2 pt-2 border-top">
+                                        <a href="teacher.html" id="close" class="btn btn-secondary btn-sm"
+                                            role="button">close</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+
+        <div id="content-wrapper" class="d-flex flex-column">
+            <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span class="text-white">Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#add").click(function() {
+            var name = $("#name").val();
+            var classes = $("#class").val();
+            var section = $("#section").val();
+            var number = $("#number").val();
+            var address = $("#address").val();
+            var mother = $("#mother").val();
+            var father = $("#father").val();
+            var formControl = $(".form-control");
+                    var isError = false;
+                    for (let control of formControl) {
+                        control = $(control)
+                        if (!control[0].checkValidity()) {
+                            $("#card").addClass("was-validated");
+                            break;
+                        }
+                        else {
+                            $("#card").removeClass("was-validated");
+                            $("#toastAlert").addClass("show");
+                        }
+                    }
+
+            });
+          
+         
+        });
+        function showErr(el) {
+          var getAttr = $(el).attr("data-attr");
+          var newAttr = $("#" + getAttr);
+          if(!$(el).val()) {
+              newAttr.show();
+          }
+        }
+           
+    </script>
+</body>
+
+</html>

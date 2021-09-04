@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Register</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="./vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/font.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        <div class="card o-hidden border-0 shadow-lg my-5 " id="card">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                            </div>
+                            <form class="user" id="form">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control" onkeyup="showErr(this)"
+                                            data-err="nameErr" id="name" placeholder="First Name" required />
+                                        <div class="invalid-feedback" id="nameErr">
+                                            This field is mandatory
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" onkeyup="showErr(this)"
+                                            data-err="lNameErr" id="lName" placeholder="Last Name" required />
+                                        <div class="invalid-feedback" id="lNameErr">
+                                            This field is mandatory
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" data-err="emailErr" onkeyup="showErr(this)"
+                                        id="email" placeholder="Email Address" required />
+                                    <div class="invalid-feedback" id="emailErr">
+                                        This field is mandatory
+                                    </div>
+                                    <div class="invalid-feedback" id="emailValidation">
+                                        Please enter valid email
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="password" minlength="6" class="form-control"
+                                            onkeyup="showErr(this)" data-err="passwordErr" id="password"
+                                            placeholder="Password" required />
+                                        <div class="invalid-feedback" id="passwordErr">
+                                            This field is mandatory
+                                        </div>
+                                        <div class="invalid-feedback" id="passwordValidation">
+                                            Password must be minimum 6 characters
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="password" onkeyup="showErr(this)" class="form-control"
+                                            data-err="repasswordErr" id="repassword" placeholder="Repeat Password"
+                                            required />
+                                        <div class="invalid-feedback" id="repasswordErr">
+                                            This field is mandatory
+                                        </div>
+                                        <div class="invalid-feedback" id="cpasswordValidation">
+                                            Please confirm your password
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <a href="#" id="register" class="btn btn-primary btn-user btn-block">
+                                    Register Account
+                                </a>
+                                <hr>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="login.html">Already have an account? Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="./js/sb-admin-2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#emailValidation").hide();
+            $("#passwordValidation").hide();
+            $("#cpasswordValidation").hide();
+
+            $("#register").click(function() {
+            
+                var password = $("#password").val();
+                var repassword = $("#repassword").val();
+
+                var formControl = $(".form-control");
+                var isError =  false;
+                for(let control of formControl) {
+                    control = $(control);
+                    if(!control[0].checkValidity()) {
+                        $("#card").addClass("was-validated");
+                        $("#emailValidation").hide();
+                        break;
+                    }
+                    else {
+                        $("#card").removeClass("was-validated");
+                        window.location.href = 'login.html';
+                    }
+
+                }
+
+                $("#cpasswordValidation").show();
+                if(password == repassword) {
+                    $("#cpasswordValidation").hide();
+                }
+                
+
+            });
+        });
+
+        function showErr(el) {
+            var getAttr = $(el).attr("data-err");
+            var newAttr = $("#" + getAttr );
+
+            newAttr.show();
+            if($(el).val()) {
+                newAttr.hide();
+            }
+
+            $("#emailValidation").hide();
+            if(getAttr == "emailErr" && $(el).val() && !$(el)[0].checkValidity()) {
+                $("#emailValidation").show();
+            }
+
+            $("#passwordValidation").hide();
+            if(getAttr == "passwordErr" && $(el).val() && $(el).val().length < 6) {
+                $("#passwordValidation").show();
+            }
+
+            if(getAttr == "repasswordErr" && !$(el).val()) {
+                $("#cpasswordValidation").hide();
+            }
+        }
+      
+    </script>
+
+</body>
+
+</html>
