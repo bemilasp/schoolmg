@@ -1,0 +1,2 @@
+# schoolmg
+jquery learning
